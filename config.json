@@ -1,0 +1,69 @@
+{
+  "workerCount": 5,
+  "machine": {
+    "startState": "s0",
+    "states": [
+      {
+        "name": "s0",
+        "keyboardMarkup": {
+          "resize_keyboard": true,
+          "keyboard": [
+            [{"text": "t6"}]
+          ]
+        },
+        "stateRoutine": "showChat",
+        "transitions": [
+          {
+            "command": {
+              "name": "test1",
+              "type": "message",
+              "keyboardMarkup": "t1",
+              "match": "t1"
+            },
+            "params": [],
+            "nextState": "s1",
+            "actionRoutine": "actiont1"
+          },
+          {
+            "command": {
+              "name": "test2",
+              "type": "message",
+              "keyboardMarkup": "t2",
+              "match": "t2"
+            },
+            "params": [],
+            "nextState": "s1",
+            "actionRoutine": "actiont2"
+          },
+          {
+            "command": {
+              "name": "test3",
+              "type": "message",
+              "keyboardMarkup": "t3",
+              "match": "t3"
+            },
+            "params": [],
+            "nextState": "s1",
+            "actionRoutine": "actiont3"
+          }
+        ]
+      },
+      {
+        "name": "s1",
+        "stateRoutine": "bs",
+        "transitions": [
+          {
+            "command": {
+              "name": "back",
+              "type": "message",
+              "match": "*"
+            },
+            "params": [],
+            "nextState": "s0",
+            "actionRoutine": "actionShow"
+          }
+        ]
+      }
+    ]
+  }
+}
